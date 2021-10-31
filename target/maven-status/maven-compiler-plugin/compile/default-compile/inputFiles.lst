@@ -1,0 +1,10 @@
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\annotation\CrudGenerator.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\service\FileGeneratorAbstract.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\service\FileGeneratorFactory.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\service\FileGeneratorService.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\domain\ClassInfo.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\domain\AnnotatedClass.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\annotation\AnnotationName.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\service\FileGenerator.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\serviceImpl\RequestFileGenerator.java
+D:\test code\crud-generator\src\main\java\com\github\crud\generator\processor\CrudGeneratorProcessor.java
