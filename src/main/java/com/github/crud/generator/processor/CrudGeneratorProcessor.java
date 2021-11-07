@@ -35,6 +35,7 @@ public class CrudGeneratorProcessor extends AbstractProcessor {
 					AnnotatedClass annotatedClass = new AnnotatedClass();
 					CrudGenerator definedAnnotation = annotatedElement.getAnnotation(CrudGenerator.class);
 					annotatedClass.setBasePackage(definedAnnotation.basePackage());
+					annotatedClass.setUseLombok(definedAnnotation.useLombok());
 					annotatedClass.setEntityClass(new ClassInfo(annotatedElement.getSimpleName().toString(), annotatedElement.asType().toString()));
 					List<? extends Element> enclosedElements = annotatedElement.getEnclosedElements();
 					for (Element enclosedElement : enclosedElements) {

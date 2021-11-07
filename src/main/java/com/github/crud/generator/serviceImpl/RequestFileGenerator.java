@@ -5,9 +5,11 @@ import org.apache.commons.lang3.StringUtils;
 import com.github.crud.generator.constant.SystemProperty;
 import com.github.crud.generator.data.builder.BuilderPipeline;
 import com.github.crud.generator.data.builder.ContentBuilder;
+import com.github.crud.generator.data.builder.EntityImportBuilder;
 import com.github.crud.generator.data.builder.FieldContentBuilder;
-import com.github.crud.generator.data.builder.LibraryBuilder;
+import com.github.crud.generator.data.builder.FieldLibraryBuilder;
 import com.github.crud.generator.data.builder.PackageBuilder;
+import com.github.crud.generator.data.builder.RequestToEntityBuilder;
 import com.github.crud.generator.domain.AnnotatedClass;
 import com.github.crud.generator.service.FileGeneratorAbstract;
 
@@ -31,8 +33,9 @@ public class RequestFileGenerator extends FileGeneratorAbstract {
 	@Override
 	protected BuilderPipeline getBuilderPipeline() {
 		return new BuilderPipeline().add(new PackageBuilder(annotatedClass.getBasePackage(), FOLDER))
-				.add(new LibraryBuilder(annotatedClass))
-				.add(new ContentBuilder(new FieldContentBuilder(annotatedClass),CLASS_NAME));
+				.add(new EntityImportBuilder(annotatedClass))
+				.add(new FieldLibraryBuilder(annotatedClass))
+				.add(new ContentBuilder(CLASS_NAME, new FieldContentBuilder(annotatedClass), new RequestToEntityBuilder(annotatedClass)));
 	}
 
 }

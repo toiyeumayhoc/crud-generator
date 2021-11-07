@@ -7,11 +7,11 @@ import com.github.crud.generator.constant.SystemProperty;
 import com.github.crud.generator.domain.AnnotatedClass;
 import com.github.crud.generator.domain.ClassInfo;
 
-public class LibraryBuilder implements DataBuilder {
+public class FieldLibraryBuilder implements DataBuilder {
 
 	protected final AnnotatedClass annotatedClass;
 
-	public LibraryBuilder(AnnotatedClass annotatedClass) {
+	public FieldLibraryBuilder(AnnotatedClass annotatedClass) {
 		this.annotatedClass = annotatedClass;
 	}
 

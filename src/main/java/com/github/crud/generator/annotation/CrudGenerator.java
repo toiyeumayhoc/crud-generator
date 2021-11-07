@@ -10,5 +10,7 @@ import java.lang.annotation.Target;
 public @interface CrudGenerator {
 	
 	String basePackage();
+	
+	boolean useLombok() default true;
 
 }

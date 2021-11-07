@@ -11,6 +11,7 @@ public class AnnotatedClass {
 	private ClassInfo entityClass;
 	private List<ClassInfo> fields;
 	private String basePackage;
+	private boolean useLombok;
 	
 	public AnnotatedClass() {
 		this.fields = new ArrayList<>();
