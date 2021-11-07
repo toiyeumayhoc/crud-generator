@@ -20,11 +20,11 @@ public class AnnotatedClass {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Base Package : ").append(basePackage).append(System.getProperty("line.separator"));
-		sb.append("Annotated class : ").append(entityClass.getType()).append(" ").append(entityClass.getName());
+		sb.append("Annotated class : ").append(entityClass.getClassType()).append(" ").append(entityClass.getName());
 		if(fields != null && fields.size()!=0 ) {
 			sb.append(System.getProperty("line.separator"));
 			for(ClassInfo field : fields) {
-				sb.append("Field : ").append(field.getType()).append(" ").append(field.getName());
+				sb.append("Field : ").append(field.getClassType()).append(" ").append(field.getName());
 				sb.append(System.getProperty("line.separator"));
 			}
 		}

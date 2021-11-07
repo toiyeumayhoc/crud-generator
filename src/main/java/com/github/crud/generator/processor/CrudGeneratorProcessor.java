@@ -35,14 +35,12 @@ public class CrudGeneratorProcessor extends AbstractProcessor {
 					AnnotatedClass annotatedClass = new AnnotatedClass();
 					CrudGenerator definedAnnotation = annotatedElement.getAnnotation(CrudGenerator.class);
 					annotatedClass.setBasePackage(definedAnnotation.basePackage());
-					annotatedClass.setEntityClass(ClassInfo.builder().name(annotatedElement.getSimpleName().toString())
-							.type(annotatedElement.asType().toString()).build());
+					annotatedClass.setEntityClass(new ClassInfo(annotatedElement.getSimpleName().toString(), annotatedElement.asType().toString()));
 					List<? extends Element> enclosedElements = annotatedElement.getEnclosedElements();
 					for (Element enclosedElement : enclosedElements) {
 						if (enclosedElement.getKind().isField()) {
 							annotatedClass.getFields()
-									.add(ClassInfo.builder().name(enclosedElement.getSimpleName().toString())
-											.type(enclosedElement.asType().toString()).build());
+									.add(new ClassInfo(enclosedElement.getSimpleName().toString(),enclosedElement.asType().toString()));
 						}
 					}
 					annotatedClasses.add(annotatedClass);

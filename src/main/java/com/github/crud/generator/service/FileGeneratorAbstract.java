@@ -4,15 +4,17 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.FileSystems;
+import java.util.List;
 
+import com.github.crud.generator.constant.SystemProperty;
+import com.github.crud.generator.data.builder.BuilderPipeline;
+import com.github.crud.generator.data.builder.DataBuilder;
 import com.github.crud.generator.domain.AnnotatedClass;
 
 public abstract class FileGeneratorAbstract implements FileGenerator {
 
 	protected final AnnotatedClass annotatedClass;
 	protected final String rootPath;
-	protected final String SEPATATOR = FileSystems.getDefault().getSeparator();
 
 	public FileGeneratorAbstract(AnnotatedClass annotatedClass) {
 		this.annotatedClass = annotatedClass;
@@ -24,7 +26,7 @@ public abstract class FileGeneratorAbstract implements FileGenerator {
 	public void excecute() {
 		try {
 			String filePath = getFilePath();
-			String data = getfileData();
+			String data = getBuilderPipeline().buildContent();
 			File file = new File(filePath.toString());
 			file.getParentFile().mkdirs();
 			if (file.createNewFile()) {
@@ -43,17 +45,15 @@ public abstract class FileGeneratorAbstract implements FileGenerator {
 	}
 
 	protected abstract String getFilePath();
-
-	protected abstract String getfileData();
+	protected abstract BuilderPipeline getBuilderPipeline();
 
 	private String getRootPath() {
-		StringBuilder sb = new StringBuilder("src").append(SEPATATOR).append("main").append(SEPATATOR).append("java")
-				.append(SEPATATOR);
+		StringBuilder sb = new StringBuilder("src").append(SystemProperty.SEPATATOR).append("main").append(SystemProperty.SEPATATOR).append("java")
+				.append(SystemProperty.SEPATATOR);
 		String[] folderNames = annotatedClass.getBasePackage().split("\\.");
 		for (String folerName : folderNames) {
-			sb.append(folerName).append(SEPATATOR);
+			sb.append(folerName).append(SystemProperty.SEPATATOR);
 		}
 		return sb.toString();
 	}
-
 }
