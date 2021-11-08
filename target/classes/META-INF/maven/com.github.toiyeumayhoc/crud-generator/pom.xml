@@ -4,15 +4,39 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>crud-generator</artifactId>
-	<name>crud-generator</name>
+	<name>CRUD generator for Spring Web Project</name>
 	<version>1.0.1</version>
 	<groupId>com.github.toiyeumayhoc</groupId>
+	<url>http://github.com/toiyeumayhoc/crud-generator</url>
+	<description>A simple library for auto generate CRUD controller for Spring Web application</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.6</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Cuong Le</name>
+			<email>cuonglv1109@gmail.com</email>
+			<organization>com.github.toiyeumayhoc</organization>
+			<organizationUrl>http://github.com/toiyeumayhoc/crud-generator</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/toiyeumayhoc/crud-generator.git</connection>
+		<developerConnection>scm:git:ssh://github.com:toiyeumayhoc/crud-generator.git</developerConnection>
+		<url>http://github.com/toiyeumayhoc/crud-generator</url>
+	</scm>
 
 	<dependencies>
 		<dependency>
