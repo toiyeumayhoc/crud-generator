@@ -6,7 +6,7 @@ import java.util.List;
 import com.github.crud.generator.domain.AnnotatedClass;
 import com.github.crud.generator.serviceImpl.ControllerFileGenerator;
 import com.github.crud.generator.serviceImpl.ExtendsRepositoryFileGenerator;
-import com.github.crud.generator.serviceImpl.MongoRepositoryFileGenerator;
+import com.github.crud.generator.serviceImpl.RepositoryFileGenerator;
 import com.github.crud.generator.serviceImpl.ReponseLombokFileGenerator;
 import com.github.crud.generator.serviceImpl.RepositoryImplementFileGenerator;
 import com.github.crud.generator.serviceImpl.RequestFileGenerator;
@@ -27,7 +27,7 @@ public class FileGeneratorFactory {
 			fileGenerators.add(new RequestFileGenerator(annotatedClass));
 			fileGenerators.add(new ResponseFileGenerator(annotatedClass));
 		}
-		fileGenerators.add(new MongoRepositoryFileGenerator(annotatedClass));
+		fileGenerators.add(new RepositoryFileGenerator(annotatedClass));
 		fileGenerators.add(new ExtendsRepositoryFileGenerator(annotatedClass));
 		fileGenerators.add(new RepositoryImplementFileGenerator(annotatedClass));
 		fileGenerators.add(new ServiceFileGenerator(annotatedClass));

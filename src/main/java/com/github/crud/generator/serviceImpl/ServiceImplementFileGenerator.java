@@ -35,9 +35,9 @@ public class ServiceImplementFileGenerator extends FileGeneratorAbstract {
 		FileInforRetreiver implementClass = new ServiceFileGenerator(annotatedClass);
 		FileInforRetreiver request = new RequestFileGenerator(annotatedClass);
 		FileInforRetreiver response = new ResponseFileGenerator(annotatedClass);
-		FileInforRetreiver repository = new MongoRepositoryFileGenerator(annotatedClass);
+		FileInforRetreiver repository = new RepositoryFileGenerator(annotatedClass);
 		this.implementClasses = Arrays.asList(implementClass.getName());
-		this.importedLibrary = Arrays.asList(LibraryPackage.OVERRIDE.getValue(), LibraryPackage.AUTOWIRED.getValue(), LibraryPackage.COLLECTORS.getValue(), LibraryPackage.OPTIONAL.getValue(), 
+		this.importedLibrary = Arrays.asList(annotatedClass.getIdType().getName(),LibraryPackage.OVERRIDE.getValue(), LibraryPackage.AUTOWIRED.getValue(), LibraryPackage.COLLECTORS.getValue(), LibraryPackage.OPTIONAL.getValue(), 
 				 LibraryPackage.LIST.getValue(), LibraryPackage.SERVICE_ANNOTATION.getValue(), implementClass.getPath(), request.getPath(), response.getPath(), repository.getPath());
  	}
 

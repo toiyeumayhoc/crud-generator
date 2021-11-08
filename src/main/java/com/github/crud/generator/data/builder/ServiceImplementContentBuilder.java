@@ -6,7 +6,7 @@ import com.github.crud.generator.constant.ImportedAnnotation;
 import com.github.crud.generator.constant.SystemProperty;
 import com.github.crud.generator.domain.AnnotatedClass;
 import com.github.crud.generator.service.FileInforRetreiver;
-import com.github.crud.generator.serviceImpl.MongoRepositoryFileGenerator;
+import com.github.crud.generator.serviceImpl.RepositoryFileGenerator;
 import com.github.crud.generator.serviceImpl.RequestFileGenerator;
 import com.github.crud.generator.serviceImpl.ResponseFileGenerator;
 
@@ -22,7 +22,7 @@ public class ServiceImplementContentBuilder implements DataBuilder {
 		this.annotatedClass = annotatedClass;
 		this.request = new RequestFileGenerator(annotatedClass);
 		this.response = new ResponseFileGenerator(annotatedClass);
-		this.repository = new MongoRepositoryFileGenerator(annotatedClass);
+		this.repository = new RepositoryFileGenerator(annotatedClass);
 		this.fromEntity = new StringBuilder(this.response.getName()).append(".from")
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(entity)")
 				.toString();
@@ -84,7 +84,7 @@ public class ServiceImplementContentBuilder implements DataBuilder {
 
 		content.append("	public ").append(this.response.getName()).append(" get")
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(")
-				.append("String ").append(" id) {").append(SystemProperty.BREAK_LINE);
+				.append(annotatedClass.getIdType().getSimpleName()).append(" id) {").append(SystemProperty.BREAK_LINE);
 
 		content.append("		Optional<").append(this.annotatedClass.getEntityClass().getName()).append(">")
 				.append(" entity = ").append(StringUtils.uncapitalize(repository.getName())).append(".findById(id);")

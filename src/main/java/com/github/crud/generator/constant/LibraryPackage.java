@@ -2,6 +2,7 @@ package com.github.crud.generator.constant;
 
 public enum LibraryPackage {
     MONGO_REPOSITORY("org.springframework.data.mongodb.repository.MongoRepository"), 
+    JPA_REPOSITORY("org.springframework.data.jpa.repository.JpaRepository"),
     SERVICE_ANNOTATION("org.springframework.stereotype.Service"),
     REPOSITORY_ANNOTATION("org.springframework.stereotype.Repository"),
     LIST("java.util.List"),

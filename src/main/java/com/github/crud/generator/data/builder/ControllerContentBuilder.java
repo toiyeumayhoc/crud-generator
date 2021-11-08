@@ -81,7 +81,7 @@ public class ControllerContentBuilder implements DataBuilder {
 	private void addGetMethod(StringBuilder content) {
 		content.append(SystemProperty.BREAK_LINE).append("	@GetMapping(\"/{id}\")").append(SystemProperty.BREAK_LINE);
 		content.append("	public ").append(this.response.getName()).append(" get")
-				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(@PathVariable String id) {").append(SystemProperty.BREAK_LINE);
+				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(@PathVariable ").append(annotatedClass.getIdType().getSimpleName()).append(" id) {").append(SystemProperty.BREAK_LINE);
 
 		content.append("		").append("return ").append(StringUtils.uncapitalize(service.getName())).append(".get")
 		.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName()))

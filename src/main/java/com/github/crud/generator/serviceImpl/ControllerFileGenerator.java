@@ -31,7 +31,7 @@ public class ControllerFileGenerator extends FileGeneratorAbstract {
 		FileInforRetreiver request = new RequestFileGenerator(annotatedClass);
 		FileInforRetreiver response = new ResponseFileGenerator(annotatedClass);
 		FileInforRetreiver service = new ServiceFileGenerator(annotatedClass);
-		this.importedLibrary = Arrays.asList(LibraryPackage.LIST.getValue(), LibraryPackage.AUTOWIRED.getValue(), LibraryPackage.DELETE_MAPPING.getValue(),
+		this.importedLibrary = Arrays.asList(annotatedClass.getIdType().getName(), LibraryPackage.LIST.getValue(), LibraryPackage.AUTOWIRED.getValue(), LibraryPackage.DELETE_MAPPING.getValue(),
 				LibraryPackage.POST_MAPPING.getValue(), LibraryPackage.GET_MAPPING.getValue(), LibraryPackage.PUT_MAPPING.getValue(), LibraryPackage.PATH_VARIABLE.getValue(),
 				LibraryPackage.REQUEST_BODY.getValue(), LibraryPackage.REQUEST_MAPPING.getValue(), LibraryPackage.REST_CONTROLLER.getValue(),
 				request.getPath(), response.getPath(), service.getPath());

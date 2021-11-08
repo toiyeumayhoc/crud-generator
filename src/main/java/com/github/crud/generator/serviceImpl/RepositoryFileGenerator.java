@@ -18,7 +18,7 @@ import com.github.crud.generator.domain.AnnotatedClass;
 import com.github.crud.generator.service.FileGeneratorAbstract;
 import com.github.crud.generator.service.FileInforRetreiver;
 
-public class MongoRepositoryFileGenerator extends FileGeneratorAbstract implements FileInforRetreiver {
+public class RepositoryFileGenerator extends FileGeneratorAbstract implements FileInforRetreiver {
 	
 	protected final String FOLDER = "repository";
 	private final String FILE_NAME;
@@ -26,14 +26,14 @@ public class MongoRepositoryFileGenerator extends FileGeneratorAbstract implemen
 	private final List<String> extendsClasses;
 	private final List<String> importedLibraries;
 	
-	public MongoRepositoryFileGenerator(AnnotatedClass annotatedClass) {
+	public RepositoryFileGenerator(AnnotatedClass annotatedClass) {
 		super(annotatedClass);
 		this.CLASS_NAME = StringUtils.capitalize(annotatedClass.getEntityClass().getName()) + "Repository";
 		this.FILE_NAME = CLASS_NAME + ".java";
 		FileInforRetreiver extendsClass = new ExtendsRepositoryFileGenerator(annotatedClass);
-		String mongoRepositoryInterface = String.format("MongoRepository<%s, %s>", annotatedClass.getEntityClass().getName(), "String");
+		String mongoRepositoryInterface = String.format("%s<%s, %s>", annotatedClass.getRepositoryType().getValue(),annotatedClass.getEntityClass().getName(), annotatedClass.getIdType().getSimpleName());
 		this.extendsClasses = Arrays.asList(mongoRepositoryInterface, extendsClass.getName());
-		this.importedLibraries = Arrays.asList(LibraryPackage.MONGO_REPOSITORY.getValue(),
+		this.importedLibraries = Arrays.asList(annotatedClass.getIdType().getName(), annotatedClass.getRepositoryType().getPackage(),
 				LibraryPackage.REPOSITORY_ANNOTATION.getValue(), extendsClass.getPath());
  	}
 

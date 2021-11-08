@@ -44,8 +44,9 @@ public class ServicePrototypeBuilder implements DataBuilder {
 	
 	private void addGetMethod(StringBuilder content) {
 		content.append("	public ").append(this.response.getName()).append(" get")
-		.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName()))
-		.append("(String id);").append(SystemProperty.BREAK_LINE);
+		.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(")
+		.append(annotatedClass.getIdType().getSimpleName())
+		.append(" id);").append(SystemProperty.BREAK_LINE);
 	}
 
 }

@@ -28,7 +28,7 @@ public class ServiceFileGenerator extends FileGeneratorAbstract implements FileI
 		this.FILE_NAME = CLASS_NAME + ".java";
 		FileInforRetreiver request = new RequestFileGenerator(annotatedClass);
 		FileInforRetreiver response = new ResponseFileGenerator(annotatedClass);
-		this.importedLibraries = Arrays.asList(LibraryPackage.LIST.getValue(),
+		this.importedLibraries = Arrays.asList(annotatedClass.getIdType().getName(), LibraryPackage.LIST.getValue(),
 				request.getPath(), response.getPath());
  	}
 

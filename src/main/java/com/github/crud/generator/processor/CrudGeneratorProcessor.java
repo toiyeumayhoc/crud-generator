@@ -12,6 +12,7 @@ import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
+import javax.lang.model.type.MirroredTypeException;
 
 import com.github.crud.generator.annotation.AnnotationName;
 import com.github.crud.generator.annotation.CrudGenerator;
@@ -36,6 +37,8 @@ public class CrudGeneratorProcessor extends AbstractProcessor {
 					CrudGenerator definedAnnotation = annotatedElement.getAnnotation(CrudGenerator.class);
 					annotatedClass.setBasePackage(definedAnnotation.basePackage());
 					annotatedClass.setUseLombok(definedAnnotation.useLombok());
+					annotatedClass.setRepositoryType(definedAnnotation.repositoryType());
+					annotatedClass.setIdType(getIdType(definedAnnotation));
 					annotatedClass.setEntityClass(new ClassInfo(annotatedElement.getSimpleName().toString(), annotatedElement.asType().toString()));
 					List<? extends Element> enclosedElements = annotatedElement.getEnclosedElements();
 					for (Element enclosedElement : enclosedElements) {
@@ -53,6 +56,19 @@ public class CrudGeneratorProcessor extends AbstractProcessor {
 		return true;
 	}
 	
+	//Tricky function but still work fine. 
+	private static Class<?> getIdType(CrudGenerator annotation) {
+	    try {
+	        annotation.idType();
+	    } catch( MirroredTypeException mte ) {
+	    	try {
+				Class<?> cls = Class.forName(mte.getTypeMirror().toString());
+				return cls;
+			} catch (ClassNotFoundException e) {
+			}
+	    }
+	    return String.class;
+	}
 
 
 }
