@@ -41,17 +41,17 @@ public class ControllerContentBuilder implements DataBuilder {
 	}
 
 	private void addPostMethod(StringBuilder content) {
-		content.append(SystemProperty.BREAK_LINE).append("	@PostMapping(\"/\")").append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	@PostMapping(\"\")").append(SystemProperty.BREAK_LINE);
 		addActionMethod(content, "create");
 	}
 
 	private void addPutMethod(StringBuilder content) {
-		content.append(SystemProperty.BREAK_LINE).append("	@PutMapping(\"/\")").append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	@PutMapping(\"\")").append(SystemProperty.BREAK_LINE);
 		addActionMethod(content, "update");
 	}
 
 	private void addDeleteMethod(StringBuilder content) {
-		content.append(SystemProperty.BREAK_LINE).append("	@DeleteMapping(\"/\")").append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	@DeleteMapping(\"\")").append(SystemProperty.BREAK_LINE);
 		addActionMethod(content, "delete");
 	}
 
@@ -69,7 +69,7 @@ public class ControllerContentBuilder implements DataBuilder {
 	}
 
 	private void addListMethod(StringBuilder content) {
-		content.append(SystemProperty.BREAK_LINE).append("	@GetMapping(\"/\")").append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	@GetMapping(\"\")").append(SystemProperty.BREAK_LINE);
 		content.append("	public List<").append(this.response.getName()).append("> list")
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("s() {").append(SystemProperty.BREAK_LINE);
 
