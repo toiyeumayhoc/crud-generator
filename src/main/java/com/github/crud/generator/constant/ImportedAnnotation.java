@@ -4,7 +4,9 @@ public enum ImportedAnnotation {
 	REPOSITORY("@Repository"),
 	SERVICE("@Service"),
 	AUTOWIRED("@Autowired"),
-	OVERRIDE("@Override");
+	OVERRIDE("@Override"),
+	REST_CONTROLLER("@RestController"),
+	REQUEST_MAPPING("@RequestMapping");
 
 	private ImportedAnnotation(final String value) {
 		this.value = value;

@@ -8,7 +8,15 @@ public enum LibraryPackage {
     AUTOWIRED("org.springframework.beans.factory.annotation.Autowired"),
     OVERRIDE("java.lang.Override"),
     OPTIONAL("java.util.Optional"),
-    COLLECTORS("java.util.stream.Collectors");
+    COLLECTORS("java.util.stream.Collectors"),
+    DELETE_MAPPING("org.springframework.web.bind.annotation.DeleteMapping"),
+    POST_MAPPING("org.springframework.web.bind.annotation.PostMapping"),
+    GET_MAPPING("org.springframework.web.bind.annotation.GetMapping"),
+    PUT_MAPPING("org.springframework.web.bind.annotation.PutMapping"),
+    PATH_VARIABLE("org.springframework.web.bind.annotation.PathVariable"),
+    REQUEST_BODY("org.springframework.web.bind.annotation.RequestBody"),
+    REQUEST_MAPPING("org.springframework.web.bind.annotation.RequestMapping"),
+    REST_CONTROLLER("org.springframework.web.bind.annotation.RestController");
  
     private LibraryPackage(final String value) {
         this.value = value;

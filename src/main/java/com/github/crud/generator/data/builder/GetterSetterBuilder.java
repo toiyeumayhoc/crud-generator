@@ -22,14 +22,14 @@ public class GetterSetterBuilder implements DataBuilder {
 	}
 	
 	private void addGetter(StringBuilder content, ClassInfo classInfo) {
-		content.append("	public ").append(classInfo.getTypeName()).append(" get").append(StringUtils.capitalize(classInfo.getName()))
+		content.append(SystemProperty.BREAK_LINE).append("	public ").append(classInfo.getTypeName()).append(" get").append(StringUtils.capitalize(classInfo.getName()))
 		.append("() {").append(SystemProperty.BREAK_LINE)
 		.append("		return this.").append(classInfo.getName()).append(";").append(SystemProperty.BREAK_LINE)
 		.append("	}").append(SystemProperty.BREAK_LINE);
 	}
 	
 	private void addSetter(StringBuilder content, ClassInfo classInfo) {
-		content.append("	public void set").append(StringUtils.capitalize(classInfo.getName()))
+		content.append(SystemProperty.BREAK_LINE).append("	public void set").append(StringUtils.capitalize(classInfo.getName()))
 		.append("(").append(classInfo.getTypeName()).append(" ").append(classInfo.getName()).append(") {").append(SystemProperty.BREAK_LINE)
 		.append("		this.").append(classInfo.getName()).append(" = ").append(classInfo.getName()).append(";").append(SystemProperty.BREAK_LINE)
 		.append("	}").append(SystemProperty.BREAK_LINE);

@@ -39,13 +39,13 @@ public class ServiceImplementContentBuilder implements DataBuilder {
 	}
 
 	private void addRepository(StringBuilder content) {
-		content.append("	").append(ImportedAnnotation.AUTOWIRED.getValue()).append(SystemProperty.BREAK_LINE)
+		content.append(SystemProperty.BREAK_LINE).append("	").append(ImportedAnnotation.AUTOWIRED.getValue()).append(SystemProperty.BREAK_LINE)
 				.append("	").append(StringUtils.capitalize(repository.getName())).append(" ")
 				.append(StringUtils.uncapitalize(repository.getName())).append(";").append(SystemProperty.BREAK_LINE);
 	}
 
 	private void addActionMethod(StringBuilder content, String action) {
-		content.append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
 
 		content.append("	public ").append(this.response.getName()).append(" ").append(action)
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(")
@@ -62,7 +62,7 @@ public class ServiceImplementContentBuilder implements DataBuilder {
 	}
 
 	private void addDeleteMethod(StringBuilder content) {
-		content.append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
 
 		content.append("	public ").append(this.response.getName()).append(" delete")
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(")
@@ -80,7 +80,7 @@ public class ServiceImplementContentBuilder implements DataBuilder {
 	}
 
 	private void addGetMethod(StringBuilder content) {
-		content.append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
 
 		content.append("	public ").append(this.response.getName()).append(" get")
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("(")
@@ -93,7 +93,7 @@ public class ServiceImplementContentBuilder implements DataBuilder {
 		content.append("		if(entity.isPresent()) {").append(SystemProperty.BREAK_LINE);
 		content.append("			return ").append(this.response.getName()).append(".from")
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName()))
-				.append("(entity.get());").append(SystemProperty.BREAK_LINE).append("	}")
+				.append("(entity.get());").append(SystemProperty.BREAK_LINE).append("		}")
 				.append(SystemProperty.BREAK_LINE);
 		content.append("		return new ").append(this.response.getName()).append("();")
 				.append(SystemProperty.BREAK_LINE).append("	}").append(SystemProperty.BREAK_LINE);
@@ -101,7 +101,7 @@ public class ServiceImplementContentBuilder implements DataBuilder {
 	}
 
 	private void addListMethod(StringBuilder content) {
-		content.append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
+		content.append(SystemProperty.BREAK_LINE).append("	").append(ImportedAnnotation.OVERRIDE.getValue()).append(SystemProperty.BREAK_LINE);
 
 		content.append("	public List<").append(this.response.getName()).append("> list")
 				.append(StringUtils.capitalize(this.annotatedClass.getEntityClass().getName())).append("s() {")

@@ -18,7 +18,7 @@ public class EntityToResponseBuilder implements DataBuilder {
 
 	@Override
 	public void addData(StringBuilder content) {
-		content.append("	public static ").append(responseClassName).append(" from")
+		content.append(SystemProperty.BREAK_LINE).append("	public static ").append(responseClassName).append(" from")
 				.append(StringUtils.capitalize(annotatedClass.getEntityClass().getName())).append("(")
 				.append(annotatedClass.getEntityClass().getName()).append(" entity")
 				.append(") {")

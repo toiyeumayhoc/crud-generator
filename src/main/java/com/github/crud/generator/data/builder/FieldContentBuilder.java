@@ -20,6 +20,7 @@ public class FieldContentBuilder implements DataBuilder {
 	
 	@Override
 	public void addData(StringBuilder content) {
+		content.append(SystemProperty.BREAK_LINE);
 		this.annotatedClass.getFields().forEach(field -> {
 			content.append("	private ").append(field.getTypeName()).append(" ").append(field.getName()).append(";")
 					.append(SystemProperty.BREAK_LINE);

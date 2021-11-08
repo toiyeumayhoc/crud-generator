@@ -16,7 +16,7 @@ public class RequestToEntityBuilder implements DataBuilder {
 
 	@Override
 	public void addData(StringBuilder content) {
-		content.append("	public ").append(annotatedClass.getEntityClass().getName()).append(" to")
+		content.append(SystemProperty.BREAK_LINE).append("	public ").append(annotatedClass.getEntityClass().getName()).append(" to")
 				.append(StringUtils.capitalize(annotatedClass.getEntityClass().getName())).append("() {").append(SystemProperty.BREAK_LINE)
 				.append("		").append(annotatedClass.getEntityClass().getName()).append(" entity = new ").append(annotatedClass.getEntityClass().getName()).append("();").append(SystemProperty.BREAK_LINE);
 				
