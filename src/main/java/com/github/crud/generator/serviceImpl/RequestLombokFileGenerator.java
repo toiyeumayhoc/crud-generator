@@ -1,7 +1,7 @@
 package com.github.crud.generator.serviceImpl;
 
 import com.github.crud.generator.data.builder.BuilderPipeline;
-import com.github.crud.generator.data.builder.ContentBuilder;
+import com.github.crud.generator.data.builder.ClassContentBuilder;
 import com.github.crud.generator.data.builder.EntityImportBuilder;
 import com.github.crud.generator.data.builder.FieldLibraryBuilder;
 import com.github.crud.generator.data.builder.LombokAnnotationBuilder;
@@ -25,7 +25,7 @@ public class RequestLombokFileGenerator extends RequestFileGenerator {
 				.add(new LombokLibraryBuilder())
 				.add(new FieldLibraryBuilder(annotatedClass))
 				.add(new LombokAnnotationBuilder())
-				.add(new ContentBuilder(CLASS_NAME, new LombokFieldContentBuilder(annotatedClass), new RequestToEntityBuilder(annotatedClass)));
+				.add(new ClassContentBuilder(CLASS_NAME, new LombokFieldContentBuilder(annotatedClass), new RequestToEntityBuilder(annotatedClass)));
 	}
 	
 }
