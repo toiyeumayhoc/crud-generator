@@ -9,7 +9,6 @@ com\github\crud\generator\data\builder\GetterSetterBuilder.class
 com\github\crud\generator\annotation\CrudGenerator.class
 com\github\crud\generator\constant\SystemProperty.class
 com\github\crud\generator\data\builder\LombokAnnotationBuilder.class
-com\github\crud\generator\serviceImpl\MongoRepositoryFileGenerator.class
 com\github\crud\generator\annotation\AnnotationName.class
 com\github\crud\generator\serviceImpl\RepositoryImplementFileGenerator.class
 com\github\crud\generator\serviceImpl\ServiceImplementFileGenerator.class
@@ -37,6 +36,7 @@ com\github\crud\generator\data\builder\ServiceImplementContentBuilder.class
 com\github\crud\generator\service\FileGeneratorAbstract.class
 com\github\crud\generator\service\FileGeneratorFactory.class
 com\github\crud\generator\data\builder\ClassContentBuilder.class
+com\github\crud\generator\serviceImpl\RepositoryFileGenerator.class
 com\github\crud\generator\data\builder\RequestToEntityBuilder.class
 com\github\crud\generator\data\builder\InterfaceContentBuilder.class
 com\github\crud\generator\data\builder\ServicePrototypeBuilder.class

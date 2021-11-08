@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>crud-generator</artifactId>
 	<name>crud-generator</name>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<groupId>com.github</groupId>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
