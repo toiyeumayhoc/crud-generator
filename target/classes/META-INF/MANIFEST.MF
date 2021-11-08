@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Build-Jdk-Spec: 11
-Implementation-Title: CRUD generator for Spring Web Project
-Implementation-Version: 1.0.1
-Created-By: Maven Integration for Eclipse
-
