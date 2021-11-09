@@ -29,7 +29,7 @@ In your Entity class, add `@CrudGenerator(basePackage = {YOUR_BASE_PACKAGE})` an
 For Example: 
 ```sh
 //Other Annotations
-@CrudGenerator(basePackage = {com.demo.project})
+@CrudGenerator(basePackage = "com.demo.project")
 public class Employee {
     private String id;
     private String name;
