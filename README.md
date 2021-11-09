@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.toiyeumayhoc/crud-generator.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.toiyeumayhoc%22%20AND%20a:%22crud-generator%22)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.toiyeumayhoc/crud-generator.svg?label=Maven%20Central)](https://search.maven.org/artifact/io.github.toiyeumayhoc/crud-generator/1.0.1/jar)
 # CRUD GENERATOR
 ## _Simple CRUD Generator for Spring Project_
 If you get tired of creating Controller, Service and Repository layers over and over again when working with Spring Web Project, this library is for you. With only one simple annotation, you will get back all the layers that needed in a second.
